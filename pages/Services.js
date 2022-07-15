@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from "../styles/portfolio.module.scss";
+import Image from 'next/image';
 
 
 export default function Services({ serviceUtils }) {
@@ -13,7 +14,7 @@ export default function Services({ serviceUtils }) {
                     {
                         serviceUtils.map((list, index) => (
                             <div key={index} className={styles.service_list}>
-                                <img className={styles.service_img} src={list.serviceIcon.url} alt="" />
+                                <Image className={styles.service_img} src={list.serviceIcon.url} alt="" />
                                 <div className={styles.service_cnt}>
                                     <h4>{list.serviceTitle}</h4>
                                     <p>{list.serviceDesc}</p>
