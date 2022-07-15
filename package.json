@@ -9,9 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.4",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.9.0",
+    "@mui/styled-engine-sc": "^5.8.0",
+    "@syncfusion/ej2-react-charts": "^20.1.59",
+    "@syncfusion/ej2-react-grids": "^20.1.59",
+    "graphql": "^16.5.0",
+    "graphql-request": "^4.2.0",
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-animated-cursor": "^2.5.1",
+    "react-dom": "18.1.0",
+    "sass": "^1.52.1",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "eslint": "8.16.0",
