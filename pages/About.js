@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from "../styles/portfolio.module.scss";
-import Image from 'next/image';
 
 
 export default function About({ personalInfo, aboutUtils }) {
@@ -9,7 +8,7 @@ export default function About({ personalInfo, aboutUtils }) {
             <div className="container">
                 <div className="d_flex flex_wrap just_btn align_center">
                     <div className={styles.about_img}>
-                        <Image src="images/about.jpg" alt="" width="100%" />
+                        <img src="images/about.jpg" alt="" width="100%" />
                     </div>
                     <div className={styles.about_cnt}>
                         {personalInfo && (

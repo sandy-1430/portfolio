@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styles from "../styles/portfolio.module.scss";
 import Modal from './Modal';
-import Image from 'next/image';
 
 export default function Portfolio({ workUtils }) {
     const [open, setOpen] = useState(false);
@@ -27,7 +26,7 @@ export default function Portfolio({ workUtils }) {
                         <div key={index} className={styles.work_list}>
                             <a onClick={() => handleClickOpen(work)}>
                                 <figure className={styles.work_img}>
-                                    <Image src={work.projectImg.url} alt="" width="100%" />
+                                    <img src={work.projectImg.url} alt="" width="100%" />
                                 </figure>
                                 <p>{work.projectType}</p>
                                 <h5>{work.projectTitle}</h5>
