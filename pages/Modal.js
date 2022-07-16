@@ -26,7 +26,7 @@ export default function Modal({ work, open, handleClose }) {
                                     <h6>{work.projectType}</h6>
                                     <h2>{work.projectTitle}</h2>
                                     <p>{work.projectDesc}</p>
-                                    <a className="black_btn">View Project</a>
+                                    <a href={work.projectUrl} target="_blank" className="black_btn">View Project</a>
                                     <a onClick={handleClose} className="close_btn">Close</a>
                                 </div>
                             </div>

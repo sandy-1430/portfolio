@@ -34,6 +34,7 @@ const QUERY = `
         projectImg {
           url
         }
+        projectUrl
       }
     }
   }
