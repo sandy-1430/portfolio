@@ -40,7 +40,7 @@ const QUERY = `
   }
 `;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { portfolios } = await graphcms.request(QUERY);
   const personalInfo = portfolios[0].bannerUtils;
   const aboutUtils = portfolios[0].aboutUtils;
