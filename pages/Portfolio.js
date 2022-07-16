@@ -23,7 +23,7 @@ export default function Portfolio({ workUtils }) {
                     <h3 className="title_txt">Featured Work <span>Portfolio</span></h3>
                 </div>
                 <div className="d_flex flex_wrap just_btn">
-                    {workUtils.map((work, index) => (
+                    {workUtils && workUtils.map((work, index) => (
                         <div key={index} className={styles.work_list}>
                             <a onClick={() => handleClickOpen(work)}>
                                 <figure className={styles.work_img}>

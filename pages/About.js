@@ -12,11 +12,16 @@ export default function About({ personalInfo, aboutUtils }) {
                         <Image src="images/about.jpg" alt="" width="100%" />
                     </div>
                     <div className={styles.about_cnt}>
-                        <div className={styles.aboutTitle}>
-                            <h3 className="title_txt">{personalInfo.firstName} {personalInfo.lastName} <span>ABOUT</span></h3>
-                            <p>{personalInfo.role}</p>
-                        </div>
-                        <p>{aboutUtils.describeMe}</p>
+                        {personalInfo && (
+                            <>
+                                <div className={styles.aboutTitle}>
+                                    <h3 className="title_txt">{personalInfo.firstName} {personalInfo.lastName} <span>ABOUT</span></h3>
+                                    <p>{personalInfo.role}</p>
+                                </div>
+                                <p>{aboutUtils.describeMe}</p>
+                            </>
+                        )
+                        }
                         <button className="black_btn">Learn More</button>
                     </div>
                 </div>
