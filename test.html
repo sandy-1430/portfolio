@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Background</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .background-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .animated-background {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image: url('./assests/contact-bg.png');
+            background-size: cover;
+            background-repeat: repeat;
+            animation: moveBackground 20s linear infinite;
+            opacity: 0.5;
+            /* Adjust as needed for transparency effect */
+        }
+
+        @keyframes moveBackground {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-container">
+        <div class="animated-background"></div>
+    </div>
+</body>
+<!-- <script>
+    document.querySelector('.animated-background').addEventListener('mouseover', () => {
+        document.querySelector('.animated-background').style.animationDuration = '10s';
+    });
+
+    document.querySelector('.animated-background').addEventListener('mouseout', () => {
+        document.querySelector('.animated-background').style.animationDuration = '20s';
+    });
+
+</script> -->
+
+</html>
