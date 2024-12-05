@@ -53,16 +53,9 @@ bannerTimeLine.to(".social-icons", {
 let aboutTimeLine = gsap.timeline({
     scrollTrigger: {
         trigger: '#about',
-        start: `-20% 30%`,
+        start: `-10% 30%`,
         end: "bottom 80%",
     }
-})
-
-aboutTimeLine.to(".about .image", {
-    x: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "none",
 })
 
 aboutTimeLine.to(".about .content h3", {
@@ -83,6 +76,13 @@ aboutTimeLine.to(".about .content .black_btn", {
     y: 0,
     opacity: 1,
     duration: 0.5,
+    ease: "none",
+})
+
+aboutTimeLine.to(".about .image", {
+    x: 0,
+    opacity: 1,
+    duration: 1,
     ease: "none",
 })
 

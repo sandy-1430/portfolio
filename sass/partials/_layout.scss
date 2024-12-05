@@ -26,8 +26,14 @@ header {
     }
 
     nav {
+        @include tablet-portrait{
+            display: none;
+        }
         ul {
             gap: toRem(10);
+            @include tablet-portrait{
+                flex-direction: column;
+            }
 
             li {
                 a {
@@ -37,8 +43,11 @@ header {
                     display: inline-block;
                     padding: toRem(30) toRem(45) toRem(40) toRem(25);
                     position: relative;
+                    @include tablet-portrait{
+                        padding: 0;
+                    }
 
-                    &::after{
+                    &::after {
                         content: "";
                         position: absolute;
                         left: 0;
@@ -50,19 +59,23 @@ header {
                         clip-path: circle(100% at -40% -150%);
                         width: 100%;
                         height: 100%;
+                        @include tablet-portrait{
+                            display: none;
+                        }
                     }
-                    
+
                     &:hover {
                         color: $secondary;
                     }
 
                     &.active {
                         color: $secondary;
-                        &::after{
+
+                        &::after {
                             background-image: url("../assests/header-active.svg");
                             opacity: 0;
                             animation: spread 1s ease-in-out forwards;
-                
+
                             @keyframes spread {
                                 to {
                                     clip-path: circle(100% at 50% 50%);
@@ -75,10 +88,71 @@ header {
             }
         }
     }
+
+    .hamburger {
+        width: toRem(40);
+        height: toRem(30);
+        position: relative;
+        margin: toRem(16) 0;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        display: none;
+
+        @include tablet-landscape{
+            display: block;
+        }
+
+        .line {
+            display: block;
+            position: absolute;
+            height: toRem(5);
+            width: 100%;
+            background: $secondary;
+            border-radius: toRem(9);
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: toRem(10);
+            }
+
+            &:nth-child(3) {
+                top: toRem(20);
+            }
+        }
+
+        &.open .line{
+            &:nth-child(1) {
+                top: toRem(18);
+                transform: rotate(135deg);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+                left: toRem(-60);
+            }
+
+            &:nth-child(3) {
+                top: toRem(18);
+                transform: rotate(-135deg);
+            }            
+        }
+    }
 }
 
 .d-flex {
     display: flex;
+    @include tablet-landscape{
+        flex-wrap: wrap;
+    }
 }
 
 .align_center {
@@ -222,10 +296,16 @@ header {
 
     .image {
         flex-basis: 35%;
+        @include tablet-landscape{
+            flex-basis: 100%;
+        }
     }
 
     .content {
         flex-basis: 55%;
+        @include tablet-landscape{
+            flex-basis: 100%;
+        }
 
         h3 {
             color: $secondary;
@@ -243,6 +323,7 @@ header {
 
 .about {
     position: relative;
+    padding: toRem(50) 0;
 
     &-bg {
         position: absolute;
@@ -252,21 +333,6 @@ header {
 
         img {
             width: 100%;
-        }
-    }
-
-    .image {
-        opacity: 0;
-        transform: translateX(-50%);
-    }
-
-    .content {
-
-        h3,
-        p,
-        .black_btn {
-            opacity: 0;
-            transform: translateY(50%);
         }
     }
 }
@@ -290,6 +356,10 @@ header {
         display: flex;
         gap: toRem(25);
 
+        @include tablet-landscape{
+            flex-wrap: wrap;
+        }
+
         li {
             cursor: pointer;
 
@@ -305,6 +375,19 @@ header {
 
         }
     }
+
+    .image{
+        @include tablet-landscape{
+            order: 1;
+        }
+    }
+
+    .content{
+        @include tablet-landscape{
+            order: 2;
+        }
+    }
+
 }
 
 .works {
@@ -372,6 +455,10 @@ header {
         border-radius: toRem(4);
         text-align: center;
 
+        @include tablet-landscape{
+            padding: toRem(30);
+        }
+
         h2 {
             color: $secondary;
             font-size: toRem(40);
@@ -390,6 +477,11 @@ header {
         display: flex;
         justify-content: center;
         gap: toRem(30);
+
+        @include tablet-landscape{
+            flex-wrap: wrap;
+            justify-content: start;
+        }
     }
 
     &-text {
@@ -492,7 +584,7 @@ header {
     }
 }
 
-footer{
+footer {
     background: $black;
     padding: toRem(30);
     text-align: center;
