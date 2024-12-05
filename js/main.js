@@ -58,6 +58,13 @@ let aboutTimeLine = gsap.timeline({
     }
 })
 
+aboutTimeLine.to(".about .image", {
+    x: 10,
+    opacity: 1,
+    duration: 1,
+    ease: "none",
+})
+
 aboutTimeLine.to(".about .content h3", {
     y: 0,
     opacity: 1,
@@ -79,12 +86,6 @@ aboutTimeLine.to(".about .content .black_btn", {
     ease: "none",
 })
 
-aboutTimeLine.to(".about .image", {
-    x: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "none",
-})
 
 // Skills Timeline Animation
 let skillTimeLine = gsap.timeline({
