@@ -101,6 +101,7 @@ header {
 
         @include tablet-landscape{
             display: block;
+            margin: toRem(16) 0 toRem(16) auto;
         }
 
         .line {
@@ -397,6 +398,11 @@ header {
         position: absolute;
         bottom: 15%;
         width: 55%;
+
+        @include tablet-landscape{
+            top: 15%;
+            bottom: unset;
+        }
     }
 
     .image {
@@ -564,11 +570,11 @@ header {
         opacity: 0;
 
         &.left {
-            transform: translateX(-50%);
+            transform: translateX(-100px);
         }
 
-        &.right {
-            transform: translateX(15%);
+        &.down {
+            transform: translateY(-100px);
         }
     }
 

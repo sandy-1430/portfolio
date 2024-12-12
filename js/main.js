@@ -3,6 +3,13 @@ gsap.registerPlugin(ScrollTrigger)
 
 // Preloader
 
+// Hamburger Menu
+let menuIcon = document.querySelector(".hamburger");
+
+menuIcon.addEventListener("click", (e)=>{
+    menuIcon.classList.toggle('open')
+})
+
 // Typewriter effect
 let bannerHeading = document.querySelector('.banner-content .role');
 
@@ -53,13 +60,13 @@ bannerTimeLine.to(".social-icons", {
 let aboutTimeLine = gsap.timeline({
     scrollTrigger: {
         trigger: '#about',
-        start: `-10% 30%`,
+        start: `-20% 30%`,
         end: "bottom 80%",
     }
 })
 
 aboutTimeLine.to(".about .image", {
-    x: 10,
+    x: 0,
     opacity: 1,
     duration: 1,
     ease: "none",
@@ -98,7 +105,7 @@ let skillTimeLine = gsap.timeline({
 
 
 skillTimeLine.to(".skills .image", {
-    x: 0,
+    y: 0,
     opacity: 1,
     duration: 1,
     ease: "none",
