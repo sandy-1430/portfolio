@@ -5,9 +5,11 @@ gsap.registerPlugin(ScrollTrigger)
 
 // Hamburger Menu
 let menuIcon = document.querySelector(".hamburger");
+let navMenu = document.querySelector("header nav");
 
 menuIcon.addEventListener("click", (e)=>{
     menuIcon.classList.toggle('open')
+    navMenu.classList.toggle('mobile-active')
 })
 
 // Typewriter effect
