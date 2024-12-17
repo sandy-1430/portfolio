@@ -219,6 +219,8 @@ let navItem = document.querySelectorAll("header nav li a")
 
 const headerScroll = (e) => {
     e.target.classList.add("active")
+    menuIcon.classList.remove('open')
+    navMenu.classList.remove('mobile-active')
     navItem.forEach((nav) => nav !== e.target ? nav.classList.remove('active') : '')
     gsap.to(window, {
         duration: '1.5',
@@ -309,3 +311,11 @@ slidePrev.addEventListener("click", () => {
     updateSlide(currentIndex)
 })
 
+
+
+let text = document.querySelector("#text");
+
+text.addEventListener("keyup", (e)=>{
+    console.log(e.target.value)
+    console.log(e.target.value.length)
+})

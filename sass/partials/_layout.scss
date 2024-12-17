@@ -358,6 +358,10 @@ header {
             width: 100%;
         }
     }
+
+    .section-content p{
+        margin: 0 0 toRem(20);
+    }
 }
 
 .skills {
@@ -559,6 +563,10 @@ header {
             span {
                 color: $text;
             }
+
+            a{
+                color: $primary;
+            }
         }
 
         &:hover {
@@ -587,6 +595,7 @@ header {
             min-width: 100%;
         }
     }
+    
 }
 
 .prespective-container {
